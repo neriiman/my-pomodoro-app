@@ -1,0 +1,29 @@
+.tab-bar-nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+
+  &__link {
+    padding: 1rem;
+    border-radius: 1rem;
+    padding-block: 0.5rem;
+    padding-inline: 1rem;
+    background: #ffe8cd;
+    box-shadow: 0rem 0.2rem 0.4rem #22222217;
+
+    &--active {
+      font-weight: bold;
+      background-color: #e5beb5;
+      &:hover {
+        background: #896c6c;
+        color: #eee6ca;
+      }
+    }
+    &:hover {
+      box-shadow: 0 0.5rem 0.5rem #22222217;
+    }
+    &:hover:not(&--active) {
+      background-color: #ffd6ba;
+    }
+  }
+}

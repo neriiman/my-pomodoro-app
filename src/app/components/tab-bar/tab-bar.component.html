@@ -1,8 +1,16 @@
-<p>tab-bar works!</p>
-<nav class="tab-bar">
-  <ul>
-    <li><a routerLink="/">Timer</a></li>
-    <li><a routerLink="tasks">Tasks</a></li>
-    <li><a routerLink="settings">Settings</a></li>
+<nav>
+  <ul class="tab-bar-nav-list">
+    @for (navItem of navItems(); track navItem.tab){
+    <li>
+      <a
+        [routerLink]="navItem.path"
+        class="tab-bar-nav-list__link"
+        routerLinkActive="tab-bar-nav-list__link--active"
+        [routerLinkActiveOptions]="{ exact: navItem.exact }"
+      >
+        {{ navItem.tab }}
+      </a>
+    </li>
+    }
   </ul>
 </nav>
