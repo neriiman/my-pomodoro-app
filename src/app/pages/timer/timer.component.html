@@ -1,1 +1,27 @@
-<p>timer works!</p>
+<section class="focus-section">
+  <div class="timer-buttons">
+    @for (button of buttons(); track button.label) {
+    <button
+      class="timer-buttons__timer-button"
+      (click)="setActiveButton(button.label)"
+      [class.timer-buttons__timer-button--active-button]="activeButton() === button.label"
+    >
+      <mat-icon [fontIcon]="button.icon"></mat-icon>
+      <span>{{ button.label }}</span></button
+    >}
+  </div>
+
+  <div class="timer-container">
+      <mat-progress-spinner 
+      mode="determinate" 
+      value="25" 
+      diameter="200"
+      aria-label="Progress bar that indicates time spent and time left"
+      class="timer-container__progress-spinner"> </mat-progress-spinner>
+      <div>25:00</div>
+      <div>
+        <button>Start/Pause</button>
+        <button>reset</button>
+      </div>
+  </div>
+</section>
