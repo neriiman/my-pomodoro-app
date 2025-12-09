@@ -8,7 +8,13 @@
         routerLinkActive="tab-bar-nav-list__link--active"
         [routerLinkActiveOptions]="{ exact: navItem.exact }"
       >
-        {{ navItem.tab }}
+        <mat-icon
+          aria-hidden="false"
+          [aria-label]="navItem.ariaLabel"
+          [fontIcon]="navItem.icon"
+        ></mat-icon>
+
+        <div>{{ navItem.tab }}</div>
       </a>
     </li>
     }
