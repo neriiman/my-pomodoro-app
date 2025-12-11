@@ -1,0 +1,51 @@
+button {
+  border-radius: 2rem;
+  padding: 0.5rem 1.5rem;
+  min-height: 3.5rem;
+  gap: 0.5rem;
+  width: 100%;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
+  &:hover:not(:host(.timer-buttons__timer-button--active-button)) {
+    box-shadow: 0 0.25rem 2rem #896c6c4b;
+    background: #ffd6ba;
+  }
+
+  &.button--shadowed {
+    box-shadow: 0 0.25rem 1rem #896c6c4b;
+  }
+  &.button--primary {
+    background: #e5beb5;
+    &:hover:not(:host(.active)) {
+      background-color: #896c6c;
+      color: #fff2eb;
+    }
+  }
+
+  &.button--secondary {
+    &:hover {
+      background: #ffd6ba;
+    }
+  }
+}
+
+:host {
+  flex: 1;
+}
+:host(.active) button {
+  background: #e5beb5;
+  &:hover {
+    background: #896c6c;
+    color: #fff2eb;
+  }
+}
+
+// &:hover:not(:host(.timer-buttons__timer-button--active-button)) {
+//   box-shadow: 0 0.25rem 2rem #896c6c4b;
+//   background: #ffd6ba;
+// }
+:host:not(.active) button:hover {
+  box-shadow: 0 0.25rem 2rem #896c6c4b;
+  background: #ffd6ba;
+}

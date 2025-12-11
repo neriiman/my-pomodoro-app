@@ -16,6 +16,10 @@ html {
       density: 0,
     )
   );
+
+  @include mat.progress-spinner-overrides((
+    active-indicator-color: #e5beb5,
+  ));
 }
 
 body {
@@ -77,6 +81,10 @@ a {
 }
 
 button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .25rem;
   background-color: transparent;
   border: none;
   cursor: pointer;

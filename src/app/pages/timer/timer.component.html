@@ -1,27 +1,39 @@
 <section class="focus-section">
   <div class="timer-buttons">
-    @for (button of buttons(); track button.label) {
-    <button
-      class="timer-buttons__timer-button"
-      (click)="setActiveButton(button.label)"
-      [class.timer-buttons__timer-button--active-button]="activeButton() === button.label"
-    >
-      <mat-icon [fontIcon]="button.icon"></mat-icon>
-      <span>{{ button.label }}</span></button
-    >}
+    @for (button of timerButtons(); track button.label) {
+    <app-button
+      [label]="button.label"
+      [iconName]="button.icon"
+      (click)="setActiveTimerButton(button.label)"
+      [class.active]="activeButton() === button.label"
+    ></app-button>
+
+    }
   </div>
 
   <div class="timer-container">
-      <mat-progress-spinner 
-      mode="determinate" 
-      value="25" 
-      diameter="200"
-      aria-label="Progress bar that indicates time spent and time left"
-      class="timer-container__progress-spinner"> </mat-progress-spinner>
-      <div>25:00</div>
-      <div>
-        <button>Start/Pause</button>
-        <button>reset</button>
-      </div>
+    <div class="timer-container__spinner-and-timer">
+      <mat-progress-spinner
+        mode="determinate"
+        value="90"
+        diameter="300"
+        aria-label="Progress bar that indicates time spent and time left"
+        class="timer-container__progress-spinner"
+      >
+      </mat-progress-spinner>
+      <div class="timer-container__timer">25:00</div>
+    </div>
+    <!-- <app-button classList="timer-container__control-buttons__button">Hej</app-button> -->
+    <div class="timer-container__control-buttons">
+      @for (button of controlButtons(); track button.label) {
+      <app-button
+        [label]="button.label"
+        [iconName]="button.icon"
+        [hierarchy]="button.hierarchy"
+        [shadowed]="true"
+      ></app-button>
+
+      }
+    </div>
   </div>
 </section>
