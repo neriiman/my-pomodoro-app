@@ -35,6 +35,7 @@ button {
 }
 :host(.active) button {
   background: #e5beb5;
+  font-weight: bold;
   &:hover {
     background: #896c6c;
     color: #fff2eb;
