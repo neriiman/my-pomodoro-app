@@ -1,0 +1,10 @@
+<div class="timer-buttons">
+  @for (button of timerButtons(); track button.label) {
+  <app-button
+    [label]="button.label"
+    [iconName]="button.icon"
+    (click)="setActiveTimerButton(button.label)"
+    [class.active]="activeButton() === button.label"
+  ></app-button>
+  }
+</div>

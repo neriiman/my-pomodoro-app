@@ -1,0 +1,11 @@
+<div class="control-buttons">
+      @for (button of controlButtons(); track button.label) {
+      <app-button
+        [label]="button.label"
+        [iconName]="button.icon"
+        [hierarchy]="button.hierarchy"
+        [shadowed]="true"
+      ></app-button>
+
+      }
+    </div>

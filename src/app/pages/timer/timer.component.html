@@ -1,14 +1,5 @@
 <section class="focus-section">
-  <div class="timer-buttons">
-    @for (button of timerButtons(); track button.label) {
-    <app-button
-      [label]="button.label"
-      [iconName]="button.icon"
-      (click)="setActiveTimerButton(button.label)"
-      [class.active]="activeButton() === button.label"
-    ></app-button>
-    }
-  </div>
+    <app-timer-buttons/>
 
   <div class="timer-container">
     <div class="timer-container__spinner-and-timer">
@@ -20,19 +11,9 @@
         class="timer-container__progress-spinner"
       >
       </mat-progress-spinner>
-      <div class="timer-container__timer">{{ timeInMinutes() }}:{{ timeInseconds() }}</div>
+      <div class="timer-container__timer">25:00</div>
     </div>
-    <!-- <app-button classList="timer-container__control-buttons__button">Hej</app-button> -->
-    <div class="timer-container__control-buttons">
-      @for (button of controlButtons(); track button.label) {
-      <app-button
-        [label]="button.label"
-        [iconName]="button.icon"
-        [hierarchy]="button.hierarchy"
-        [shadowed]="true"
-      ></app-button>
 
-      }
-    </div>
+    <app-control-buttons/>
   </div>
 </section>
