@@ -7,7 +7,6 @@
       (click)="setActiveTimerButton(button.label)"
       [class.active]="activeButton() === button.label"
     ></app-button>
-
     }
   </div>
 
@@ -21,7 +20,7 @@
         class="timer-container__progress-spinner"
       >
       </mat-progress-spinner>
-      <div class="timer-container__timer">25:00</div>
+      <div class="timer-container__timer">{{ timeInMinutes() }}:{{ timeInseconds() }}</div>
     </div>
     <!-- <app-button classList="timer-container__control-buttons__button">Hej</app-button> -->
     <div class="timer-container__control-buttons">

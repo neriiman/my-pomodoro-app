@@ -50,6 +50,9 @@ export class TimerComponent {
     },
   ]);
 
+  timeInMinutes = signal<number>(25)
+  timeInseconds = signal<number>(0)
+
   setActiveTimerButton(label: string) {
     this.activeButton.set(label);
   }
