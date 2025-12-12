@@ -1,5 +1,5 @@
-<button class="button--{{hierarchy()}}"
-[class.button--shadowed] = shadowed()>
+<button class="button--{{ hierarchy() }}" [class.button--shadowed]="shadowed()"
+(click)="handleClick($event)">
   @if (iconName()) {<mat-icon [fontIcon]="iconName()"></mat-icon>}
 
   <span>{{ label() }}</span>

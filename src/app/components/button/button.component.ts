@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 
 @Component({
@@ -8,10 +8,13 @@ import { MatIcon } from '@angular/material/icon';
   styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
-  classList = input<string>();
-  hasIcon = input<boolean>(false);
   label = input.required<string>();
   hierarchy = input<'primary' | 'secondary'>('secondary');
   iconName = input<string>('');
-  shadowed = input<boolean>(false)
+  shadowed = input<boolean>(false);
+  pressed = output<MouseEvent>();
+
+  handleClick(event:MouseEvent) {
+    this.pressed.emit(event);
+  }
 }

@@ -10,4 +10,6 @@ import { ControlButtonsComponent } from '../../components/control-buttons/contro
   templateUrl: './timer.component.html',
   styleUrl: './timer.component.scss',
 })
-export class TimerComponent {}
+export class TimerComponent {
+  remainingTime = signal<number>(60*25);
+}

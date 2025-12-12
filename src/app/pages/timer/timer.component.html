@@ -1,5 +1,5 @@
 <section class="focus-section">
-    <app-timer-buttons/>
+  <app-timer-buttons />
 
   <div class="timer-container">
     <div class="timer-container__spinner-and-timer">
@@ -14,6 +14,6 @@
       <div class="timer-container__timer">25:00</div>
     </div>
 
-    <app-control-buttons/>
+    <app-control-buttons [remainingTimeInSeconds]="remainingTime" />
   </div>
 </section>
