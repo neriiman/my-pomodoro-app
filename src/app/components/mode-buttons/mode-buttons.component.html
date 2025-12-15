@@ -3,7 +3,7 @@
   <app-button
     [label]="button.mode"
     [iconName]="button.icon"
-    (pressed)="setActiveMode(button.mode, button.time)"
+    (pressed)="setActiveMode(button.mode)"
     [class.active]="activeMode() === button.mode"
   ></app-button>
   }

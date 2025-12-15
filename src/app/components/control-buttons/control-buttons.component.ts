@@ -1,6 +1,7 @@
-import { Component, computed, input, model, signal } from '@angular/core';
+import { Component, computed, inject, input, model, signal } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { FormatTimePipe } from '../../pipes/format-time.pipe';
+import { TimerService } from '../../timer.service';
 
 interface ControlButton {
   label: 'Play' | 'Pause' | 'Reset';
@@ -16,8 +17,9 @@ interface ControlButton {
   styleUrl: './control-buttons.component.scss',
 })
 export class ControlButtonsComponent {
-  maxTime = input.required<number>()
-  timerIsRunning = signal(false);
+  timer = inject(TimerService);
+  remainingTime = this.timer.remainingTime;
+  timerIsRunning = this.timer.timerIsRunning
   controlButtons = computed<ControlButton[]>(() => [
     {
       label: this.timerIsRunning() ? 'Pause' : 'Play',
@@ -32,26 +34,14 @@ export class ControlButtonsComponent {
       onClick: () => this.resetTimer(),
     },
   ]);
-  remainingTimeInSeconds = model.required<number>()
-  intervalId: any = null;
 
   playTimer() {
-    this.timerIsRunning.set(true);
-    this.intervalId = setInterval(() => {
-      if (this.remainingTimeInSeconds() > 0) {
-        this.remainingTimeInSeconds.update((prev) => prev - 1);
-      } else {
-        this.resetTimer();
-      }
-    }, 1000);
+    this.timer.playTimer();
   }
   pauseTimer() {
-    this.timerIsRunning.set(false);
-    clearInterval(this.intervalId);
+    this.timer.pauseTimer();
   }
   resetTimer() {
-    this.timerIsRunning.set(false);
-    clearInterval(this.intervalId);
-    this.remainingTimeInSeconds.set(this.maxTime());
+    this.timer.resetTimer();
   }
 }

@@ -1,5 +1,5 @@
 <section class="focus-section">
-  <app-mode-buttons [(modeTime)] = "maxTime" />
+  <app-mode-buttons />
 
   <div class="timer-container">
     <div class="timer-container__spinner-and-timer">
@@ -14,8 +14,6 @@
       <div class="timer-container__timer">{{ remainingTime() | formatTime }}</div>
     </div>
 
-    <app-control-buttons 
-    [maxTime]="maxTime()"
-    [(remainingTimeInSeconds)]="remainingTime" />
+    <app-control-buttons />
   </div>
 </section>

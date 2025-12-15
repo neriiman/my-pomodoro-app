@@ -1,5 +1,5 @@
 <div class="control-buttons">
-  <div>{{ remainingTimeInSeconds() | formatTime }}</div>
+  <div>{{ remainingTime() | formatTime }}</div>
   @for (button of controlButtons(); track button.label) {
   <app-button
     [label]="button.label"
