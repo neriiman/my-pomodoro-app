@@ -16,6 +16,7 @@ interface ControlButton {
   styleUrl: './control-buttons.component.scss',
 })
 export class ControlButtonsComponent {
+  maxTime = input.required<number>()
   timerIsRunning = signal(false);
   controlButtons = computed<ControlButton[]>(() => [
     {
@@ -51,6 +52,6 @@ export class ControlButtonsComponent {
   resetTimer() {
     this.timerIsRunning.set(false);
     clearInterval(this.intervalId);
-    this.remainingTimeInSeconds.set(25 * 60);
+    this.remainingTimeInSeconds.set(this.maxTime());
   }
 }

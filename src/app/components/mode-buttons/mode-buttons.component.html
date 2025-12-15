@@ -1,9 +1,9 @@
-<div class="timer-buttons">
+<div class="mode-buttons">
   @for (button of modeButtons(); track button.mode) {
   <app-button
     [label]="button.mode"
     [iconName]="button.icon"
-    (click)="setActiveMode(button.mode)"
+    (pressed)="setActiveMode(button.mode, button.time)"
     [class.active]="activeMode() === button.mode"
   ></app-button>
   }

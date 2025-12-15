@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinner } from '@angular/material/progress-spinner';
 import { ModeButtonsComponent } from '../../components/mode-buttons/mode-buttons.component';
@@ -17,9 +17,17 @@ import { FormatTimePipe } from '../../pipes/format-time.pipe';
   styleUrl: './timer.component.scss',
 })
 export class TimerComponent {
-  maxTime = signal(25 * 60);
-  remainingTime = signal(this.maxTime());
+  maxTime = signal<number>(25 * 60);
+  remainingTime = signal<number>(this.maxTime());
+
+
   remainingTimeInPercentage = computed<number>(() =>
     Math.floor((this.remainingTime() / this.maxTime()) * 100)
   );
+
+  constructor() {
+    effect(() => {
+      this.remainingTime.set(this.maxTime());
+    });
+  }
 }
