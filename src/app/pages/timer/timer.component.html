@@ -1,17 +1,17 @@
 <section class="focus-section">
-  <app-timer-buttons />
+  <app-mode-buttons />
 
   <div class="timer-container">
     <div class="timer-container__spinner-and-timer">
       <mat-progress-spinner
         mode="determinate"
-        value="90"
+        [value]="remainingTimeInPercentage()"
         diameter="300"
         aria-label="Progress bar that indicates time spent and time left"
         class="timer-container__progress-spinner"
       >
       </mat-progress-spinner>
-      <div class="timer-container__timer">25:00</div>
+      <div class="timer-container__timer">{{ remainingTime() | formatTime }}</div>
     </div>
 
     <app-control-buttons [(remainingTimeInSeconds)]="remainingTime" />

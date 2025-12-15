@@ -1,0 +1,10 @@
+<div class="timer-buttons">
+  @for (button of modeButtons(); track button.mode) {
+  <app-button
+    [label]="button.mode"
+    [iconName]="button.icon"
+    (click)="setActiveMode(button.mode)"
+    [class.active]="activeMode() === button.mode"
+  ></app-button>
+  }
+</div>
