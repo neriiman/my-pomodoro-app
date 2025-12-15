@@ -1,4 +1,4 @@
-import { Component, computed, input, signal } from '@angular/core';
+import { Component, computed, input, model, signal } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { FormatTimePipe } from '../../pipes/format-time.pipe';
 
@@ -31,7 +31,7 @@ export class ControlButtonsComponent {
       onClick: () => this.resetTimer(),
     },
   ]);
-  remainingTimeInSeconds = input.required<number>()
+  remainingTimeInSeconds = model.required<number>()
   intervalId: any = null;
 
   playTimer() {
