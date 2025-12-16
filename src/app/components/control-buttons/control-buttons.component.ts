@@ -12,7 +12,7 @@ interface ControlButton {
 
 @Component({
   selector: 'app-control-buttons',
-  imports: [ButtonComponent, FormatTimePipe],
+  imports: [ButtonComponent],
   templateUrl: './control-buttons.component.html',
   styleUrl: './control-buttons.component.scss',
 })

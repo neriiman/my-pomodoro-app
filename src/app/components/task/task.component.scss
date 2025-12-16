@@ -1,0 +1,66 @@
+.task-container {
+  display: flex;
+  min-width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background: #ffdcdc;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 1rem #896c6c4b;
+  &:hover {
+    box-shadow: 0 0.5rem 1rem #896c6c4b;
+    filter: brightness(1);
+  }
+}
+.check-icon{
+    color: #679B9B;
+    &:hover {
+        filter:grayscale(.4);
+        border-radius: 2rem;
+     
+      }
+}
+.task{
+    flex:1;
+}
+.task-label-and-priority-tag {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+  &__label {
+    // background: #a58484;
+    font-weight: bold;
+    font-size: 1.125rem;
+  }
+  &__priority-tag {
+    font-size: .5rem;
+    border-radius: 2rem;
+    padding: 0.25rem 1rem;
+    &--high {
+      background: #f7418f;
+      color: #fff2eb;
+    }
+    &--medium {
+      background: #f5fae1;
+    }
+    &--low {
+      background: #cee6f3;
+    }
+  }
+}
+.description {
+}
+.deleting-button-icon {
+  color: #f7418f;
+  border-radius: 2rem;
+  &:hover {
+    filter:grayscale(.4);
+  }
+}
+:host{
+    flex:1;
+    min-width: 100%;
+    max-width: 600px;
+}

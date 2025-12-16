@@ -1,6 +1,13 @@
-<button class="button--{{ hierarchy() }}" [class.button--shadowed]="shadowed()"
-(click)="handleClick($event)">
-  @if (iconName()) {<mat-icon [fontIcon]="iconName()"></mat-icon>}
-
+<button
+  class="button--{{ hierarchy() }}"
+  [class.button--shadowed]="shadowed()"
+  (click)="handleClick($event)"
+>
+  @if (iconName()){
+  <mat-icon [fontIcon]="iconName()"></mat-icon>
+  } @if (label()){
   <span>{{ label() }}</span>
+  } @else if (!label()) {
+    <ng-content/>
+   }
 </button>

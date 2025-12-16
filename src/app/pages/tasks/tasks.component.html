@@ -1,1 +1,6 @@
-<p>tasks works!</p>
+<h1 class="title">Tasks to do</h1>
+<div class="task-container">
+  @for (todo of todos(); track todo.id) {
+  <app-task [priority]="todo.priority" [label]="todo.label" [description]="todo.description" />
+  }
+</div>

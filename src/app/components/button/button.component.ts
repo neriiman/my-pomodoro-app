@@ -8,13 +8,13 @@ import { MatIcon } from '@angular/material/icon';
   styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
-  label = input.required<string>();
-  hierarchy = input<'primary' | 'secondary'>('secondary');
+  label = input<string>();
+  hierarchy = input<'primary' | 'secondary' | 'tertiary'>('secondary');
   iconName = input<string>('');
   shadowed = input<boolean>(false);
   pressed = output<MouseEvent>();
 
-  handleClick(event:MouseEvent) {
+  handleClick(event: MouseEvent) {
     this.pressed.emit(event);
   }
 }

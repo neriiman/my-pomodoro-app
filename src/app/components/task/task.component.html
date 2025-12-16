@@ -1,0 +1,37 @@
+<div class="task-container">
+  <!-- ✅ check btn -->
+  <app-button 
+  hierarchy="tertiary" 
+  class="icon-button" 
+  (pressed)="toggleIsChecked()">
+    <mat-icon
+      class="check-icon"
+      [fontIcon]="isChecked() ? 'check_circle' : 'radio_button_unchecked'"
+    />
+  </app-button>    
+  
+  <!-- 📜 Att göra! -->
+  <div class="task">
+    <div class="task-label-and-priority-tag">
+      <label for="task" class="task-label-and-priority-tag__label">{{ label() }}</label>
+      <div
+        class="task-label-and-priority-tag__priority-tag task-label-and-priority-tag__priority-tag--{{
+          priority()
+        }}"
+      >
+        {{ priority() | titlecase }} priority
+      </div>
+    </div>
+    <p class="description">{{ description() }}</p>
+  </div>
+
+  <!-- ❌ deleting btn -->
+  <app-button hierarchy="tertiary" class="icon-button">
+    <mat-icon
+      aria-hidden="false"
+      aria-label="papperkorg-ikon för att radera uppgiften"
+      fontIcon="delete"
+      class="deleting-button-icon"
+    />
+  </app-button>
+</div>
