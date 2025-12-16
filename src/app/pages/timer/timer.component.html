@@ -13,7 +13,10 @@
       </mat-progress-spinner>
       <div class="timer-container__timer">{{ remainingTime() | formatTime }}</div>
     </div>
-
     <app-control-buttons />
+    <div class="timer-container__sessions-completed-container">
+      <p>Sessions completed:</p>
+      <p class="timer-container__sessions-completed-container__count"> {{ sessionsCount() }} / {{goalCount()}}</p>
+    </div>
   </div>
 </section>

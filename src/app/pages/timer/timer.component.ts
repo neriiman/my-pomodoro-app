@@ -20,6 +20,7 @@ import { TimerService } from '../../timer.service';
 export class TimerComponent {
   timer = inject(TimerService);
   remainingTime = this.timer.remainingTime;
-
   remainingTimeInPercentage = this.timer.remainingTimeInPercentage;
+  sessionsCount = this.timer.focusCount
+  goalCount = this.timer.goalCount
 }

@@ -15,6 +15,7 @@
   border-radius: 2rem;
   padding: 2rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
@@ -31,4 +32,21 @@
     font-size: 4rem;
     position: absolute;
   }
+  &__sessions-completed-container{
+    background: #F5FAE1;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+      box-shadow: 0 .5rem 3rem #896c6c41;
+
+    &__count{
+          font-size: 3rem;
+
+    }
+    
+  }
+ 
 }

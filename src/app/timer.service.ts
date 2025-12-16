@@ -32,6 +32,8 @@ export class TimerService {
 
   focusCount = signal(0);
 
+  goalCount = signal(16)
+
   intervalId: any = null;
 
   constructor() {

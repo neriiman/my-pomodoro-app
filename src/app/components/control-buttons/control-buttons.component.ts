@@ -18,7 +18,6 @@ interface ControlButton {
 })
 export class ControlButtonsComponent {
   timer = inject(TimerService);
-  remainingTime = this.timer.remainingTime;
   timerIsRunning = this.timer.timerIsRunning
   controlButtons = computed<ControlButton[]>(() => [
     {
