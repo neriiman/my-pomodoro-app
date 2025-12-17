@@ -1,8 +1,9 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, computed, inject, input, signal } from '@angular/core';
 import { MatIcon } from '@angular/material/icon';
 import { ButtonComponent } from '../button/button.component';
 import { TitleCasePipe } from '@angular/common';
-import { Priority } from '../../model/todo.type';
+import { Priority, Todo } from '../../model/todo.type';
+import { TodosService } from '../../services/todos.service';
 
 @Component({
   selector: 'app-task',
@@ -11,11 +12,10 @@ import { Priority } from '../../model/todo.type';
   styleUrl: './task.component.scss',
 })
 export class TaskComponent {
-  isChecked = signal(true);
-  priority = input<Priority>('high');
-  label = input.required<string>();
-  description = input<string>();
+  todosService = inject(TodosService);
+  todo = input.required<Todo>();
+
   toggleIsChecked() {
-    this.isChecked.update((prev) => !prev);
+    this.todosService.toggleIsChecked(this.todo().id);
   }
 }

@@ -35,4 +35,17 @@ const defaultTodos: Todo[] = [
 })
 export class TodosService {
   todos = signal<Todo[]>(defaultTodos);
+
+  toggleIsChecked(id: number) {
+    this.todos.update((prev) =>
+      prev.map((item) =>
+        item.id === id
+          ? {
+              ...item,
+              isCompleted: !item.isCompleted,
+            }
+          : item
+      )
+    );
+  }
 }

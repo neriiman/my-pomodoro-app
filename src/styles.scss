@@ -43,19 +43,21 @@ body {
   color: inherit;
   font-family: Lexend Deca, 'Helvetica Neue', sans-serif;
   height: 100%;
+  // min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background: #1c1896;
+  // justify-content: stretch;
+  align-items: stretch;
   // background: var(--mat-sys-surface);
   background: #fff2eb;
 }
-// html,
-// body {
-//   height: 100%;
-//   // background: var(--mat-sys-surface);
-//   background: #fff2eb;
-// }
+html,
+body {
+  height: 100%;
+  // background: var(--mat-sys-surface);
+  // background: #fff2eb;
+}
 /* You can add global styles to this file, and also import other style files */
 *,
 *::before,
@@ -93,7 +95,31 @@ button {
   border: none;
   cursor: pointer;
 }
-
+main{
+  width: 100%;
+  max-width: 800px;
+}
+app-root{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.page {
+  // background: #FFDCDC;
+  display: flex;
+  min-width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  border-radius: 1rem;
+  padding: 2rem;
+  gap: 2rem;
+}
+.title{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
 @mixin flexCenter($direction) {
   justify-content: center;
   align-content: center;

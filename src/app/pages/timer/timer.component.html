@@ -1,4 +1,6 @@
-<section class="focus-section">
+<div class="page">
+  <h1 class="title">Time to focus!</h1>
+
   <app-mode-buttons />
 
   <div class="timer-container">
@@ -16,7 +18,9 @@
     <app-control-buttons />
     <div class="timer-container__sessions-completed-container">
       <p>Sessions completed:</p>
-      <p class="timer-container__sessions-completed-container__count"> {{ sessionsCount() }} / {{goalCount()}}</p>
+      <p class="timer-container__sessions-completed-container__count">
+        {{ sessionsCount() }} / {{ goalCount() }}
+      </p>
     </div>
   </div>
-</section>
+</div>
