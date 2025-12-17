@@ -1,4 +1,10 @@
-
+:host{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: stretch;
+}
 .tasks-container {
   display: flex;
   flex-direction: column;
@@ -6,5 +12,6 @@
   align-items: center;
   gap: .5rem;
   padding: 2rem;
+  width: 100%;
   
 }

@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { computed, Injectable, signal } from '@angular/core';
 import { Todo } from '../model/todo.type';
 const defaultTodos: Todo[] = [
   {
@@ -30,11 +30,34 @@ const defaultTodos: Todo[] = [
     priority: 'low',
   },
 ];
+
+type TasksCompletionState = 'empty' | 'allCompleted' | 'noneCompleted' | 'inProgress';
 @Injectable({
   providedIn: 'root',
 })
 export class TodosService {
   todos = signal<Todo[]>(defaultTodos);
+
+  uncompletedTasks = computed(() => this.todos().filter((task) => !task.isCompleted));
+
+  completedTasks = computed(() => this.todos().filter((task) => task.isCompleted));
+
+  tasksCompletionState = computed<TasksCompletionState>(() => {
+    if (this.todos().length === 0) return 'empty';
+
+    if (this.todos().length > 0 && this.uncompletedTasks().length === 0) return 'allCompleted';
+
+    if (this.todos().length > 0 && this.completedTasks().length === 0) return 'noneCompleted';
+
+    return 'inProgress';
+  });
+
+  tasksOverviewState = computed(() => ({
+    totalTodos: this.todos().length,
+    completed: this.completedTasks().length,
+    remaining: this.uncompletedTasks().length,
+    completionState: this.tasksCompletionState()
+  }));
 
   toggleIsChecked(id: number) {
     this.todos.update((prev) =>

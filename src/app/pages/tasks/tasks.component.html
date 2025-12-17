@@ -1,8 +1,32 @@
 <div class="page">
-    <h1 class="title">Tasks to do</h1>
+  <h1 class="title">Tasks to do</h1>
+  <section>
+    <h2 class="section-title">Tasks to complete</h2>
+    @switch (tasksCompletionState()) {
+      @case ('empty') {
+        <p>You have no tasks to do yet.</p>
+      }
+      @case ('allCompleted') {
+        <p>You have completed all your tasks! 🎉</p>
+      }
+  
+    }
     <div class="tasks-container">
-      @for (todo of todos(); track todo.id) {
+      @for (todo of uncompletedTasks(); track todo.id) {
       <app-task [todo]="todo" />
       }
     </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Completed tasks</h2>
+    @if(tasksCompletionState()==='noneCompleted'){
+      <p>You haven't completed any task yet... you have {{tasksOverviewState().remaining}} tasks left</p>
+      } 
+    <div class="tasks-container">
+      @for (todo of completedTasks(); track todo.id) {
+      <app-task [todo]="todo" />
+      }
+    </div>
+  </section>
 </div>

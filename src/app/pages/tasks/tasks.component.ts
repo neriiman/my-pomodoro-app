@@ -11,6 +11,14 @@ import { Todo } from '../../model/todo.type';
 })
 export class TasksComponent {
   todosService = inject(TodosService);
+
   todos = this.todosService.todos;
- 
+
+  tasksCompletionState = this.todosService.tasksCompletionState;
+
+  tasksOverviewState = this.todosService.tasksOverviewState
+
+  uncompletedTasks = this.todosService.uncompletedTasks;
+
+  completedTasks = this.todosService.completedTasks;
 }

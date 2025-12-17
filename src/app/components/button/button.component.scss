@@ -19,9 +19,9 @@ button {
       background: #ffd6ba;
     }
   }
-  &.button--tertiary {
+  // &.button--tertiary {
 
-  }
+  // }
 }
 :host {
   flex: 1;
@@ -34,7 +34,7 @@ button {
   color: #fff2eb;
 }
 
-:host:not(.active):not(.icon-button) button:hover {
+:host:not(.active):not(.icon-button) button:not(.button--primary):hover {
   box-shadow: 0 0.25rem 2rem #896c6c4b;
   background: #ffd6ba;
 }
@@ -45,6 +45,8 @@ button {
   &:hover {
     background: #896c6c;
     color: #fff2eb;
+    box-shadow: 0 0.25rem 2rem #896c6c4b;
+
   }
 }
 :host(.icon-button) button {

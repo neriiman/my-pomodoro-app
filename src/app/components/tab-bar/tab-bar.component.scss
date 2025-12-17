@@ -1,5 +1,20 @@
+nav {
+  width: 100%;
+  border-radius: 1rem;
+}
+// . b{
+
+//   min-width: 100%;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: stretch;
+//   border-radius: 1rem;
+//   padding: 2rem;
+//   gap: 2rem;
+// }
 .tab-bar-nav-list {
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
   box-shadow: 2rem 2rem 2rem #cc898917, -2rem -2rem 2rem #cc898917;

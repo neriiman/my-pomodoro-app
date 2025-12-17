@@ -17,9 +17,11 @@ html {
     )
   );
 
-  @include mat.progress-spinner-overrides((
-    active-indicator-color: #e5beb5,
-  ));
+  @include mat.progress-spinner-overrides(
+    (
+      active-indicator-color: #e5beb5,
+    )
+  );
 }
 
 body {
@@ -90,34 +92,41 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: .25rem;
+  gap: 0.25rem;
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
-main{
+main {
   width: 100%;
   max-width: 800px;
 }
-app-root{
+app-root {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
 .page {
-  // background: #FFDCDC;
+  // background: #ffdcdc;
   display: flex;
-  min-width: 100%;
+  width: 100%;
+  min-height: 100vh;
+  flex:1;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: stretch;
   border-radius: 1rem;
-  padding: 2rem;
+  // padding: 2rem;
   gap: 2rem;
 }
-.title{
-  font-size: 1.5rem;
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.section-title {
+  font-size: 1.25rem;
   font-weight: bold;
 }
 @mixin flexCenter($direction) {
