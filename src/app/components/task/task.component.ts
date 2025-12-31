@@ -18,4 +18,8 @@ export class TaskComponent {
   toggleIsChecked() {
     this.todosService.toggleIsChecked(this.todo().id);
   }
+
+  deleteTask() {
+    this.todosService.deleteTask(this.todo().id);
+  }
 }

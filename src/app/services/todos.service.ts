@@ -56,7 +56,7 @@ export class TodosService {
     totalTodos: this.todos().length,
     completed: this.completedTasks().length,
     remaining: this.uncompletedTasks().length,
-    completionState: this.tasksCompletionState()
+    completionState: this.tasksCompletionState(),
   }));
 
   toggleIsChecked(id: number) {
@@ -70,5 +70,9 @@ export class TodosService {
           : item
       )
     );
+  }
+
+  deleteTask(id: number) {
+    this.todos.update((prev) => prev.filter((item) => item.id !== id));
   }
 }
