@@ -1,7 +1,7 @@
 .layout {
   display: flex;
-  flex-direction: column;
-  justify-content: start;
+  // flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 2rem;
   height: 100%;
@@ -27,5 +27,5 @@ app-tab-bar {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  // width: 100%;
 }
